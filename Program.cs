@@ -1,5 +1,5 @@
-using CitaApp.Interfaces;
-using CitaApp.Repositories;
+using CitasApp.Domain.Interfaces;
+using CitasApp.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
