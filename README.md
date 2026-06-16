@@ -21,11 +21,16 @@ CitasApp es una aplicación web desarrollada en ASP.NET Core MVC (.NET 10) que p
 ## Estructura del proyecto
 
 * **Controllers/**: Contiene los controladores encargados de manejar las solicitudes y la lógica de la aplicación.
+* **Application/**: Incluye los servicios que implementan la lógica de negocio y coordinan las operaciones entre los controladores y los repositorios.
 * **Models/**: Incluye las clases que representan las entidades principales del sistema (Paciente, Médico y Cita).
 * **Interfaces/**: Define los contratos utilizados por los repositorios.
 * **Repositories/**: Implementa las operaciones de lectura y escritura de datos en archivos JSON.
 * **Views/**: Contiene las vistas desarrolladas con Razor para la interfaz de usuario.
 * **Data/**: Almacena los archivos JSON que funcionan como base de datos del proyecto.
+
+## Muestra de uso
+
+el video está en la carpeta de photos
 
 
 ```
