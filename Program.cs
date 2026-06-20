@@ -39,6 +39,18 @@ builder.Services.AddScoped<CitaService>();
 // ── 3. MVC ────────────────────────────────────────────────────────────────────
 builder.Services.AddControllersWithViews();
 
+// ── Configuración de CORS para permitir que tu HTML externo se conecte ──
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontendExterno", policy =>
+    {
+        policy.AllowAnyOrigin()   // Permite que cualquier HTML externo se conecte
+              .AllowAnyHeader()   // Permite cualquier tipo de encabezado
+              .AllowAnyMethod();  // Permite GET, POST, PUT, DELETE, etc.
+    });
+});
+
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -51,6 +63,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseCors("PermitirFrontendExterno");//para html de calculadora, es para darle permisos
 app.UseAuthorization();
 
 app.MapControllerRoute(
