@@ -2,8 +2,8 @@
 
 | Campo  | Valor |
 |--------|-------|
-| Autor  | [Tu Nombre] |
-| Fecha  | DD/MM/AAAA |
+| Autor  | Venus Semino |
+| Fecha  | 19/06/2026 |
 | Estado | `Aceptado` |
 
 ---
