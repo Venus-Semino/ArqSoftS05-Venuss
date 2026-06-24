@@ -1,55 +1,51 @@
 using CitasApp.Application.Services;
 using CitasApp.Domain.Interfaces;
 using CitasApp.Infrastructure.Repositories;
+using CitasApp.Infrastructure.Observers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // ─────────────────────────────────────────────────────────────────────────────
-// AQUÍ enchufas el Adapter que quieres usar para cada entidad.
-// Domain y Application NO se tocan — solo cambia este archivo.
+// ── 1. PATRONES DE DISEÑO (GoF) ──────────────────────────────────────────────
 // ─────────────────────────────────────────────────────────────────────────────
 
-// ── 1. Elige tus Adapters ─────────────────────────────────────────────────────
-// Descomenta el bloque que quieras usar y comenta los demás.
-// ¡Las interfaces (Ports) no cambian!
+var entorno = builder.Environment.EnvironmentName;
 
-// ▶ Bloque A — JSON (Como estaba antes)
-/*
-builder.Services.AddScoped<IPacienteRepository, PacienteJsonRepository>();
-builder.Services.AddScoped<IMedicoRepository, MedicoJsonRepository>();
-builder.Services.AddScoped<ICitaRepository, CitaJsonRepository>();
-*/
+// ▶ Patrones Factory y Decorator combinados
+builder.Services.AddScoped<IPacienteRepository>(provider =>
+{
+    // La Factory crea el repositorio base (CSV o Memoria)
+    var repoBase = RepositoryFactory.CrearPacienteRepository(entorno);
+    // El Decorator lo envuelve para agregarle Logs en consola
+    return new LoggingPacienteRepository(repoBase);
+});
 
-// ▶ Bloque B — CSV ← ACTIVO AHORA
-builder.Services.AddScoped<IPacienteRepository, CsvPacienteRepository>();
-builder.Services.AddScoped<IMedicoRepository, CsvMedicoRepository>();
-builder.Services.AddScoped<ICitaRepository, CsvCitaRepository>();
+// ▶ Patrón Factory para Médicos y Citas
+builder.Services.AddScoped<IMedicoRepository>(_ => RepositoryFactory.CrearMedicoRepository(entorno));
+builder.Services.AddScoped<ICitaRepository>(_ => RepositoryFactory.CrearCitaRepository(entorno));
 
-// ▶ Bloque C — Memoria RAM (Prueba extra)
-/*
-builder.Services.AddScoped<IPacienteRepository, MemoriaPacienteRepository>();
-// ...
-*/
+// ▶ Patrón Observer
+builder.Services.AddScoped<ICitaObserver, NotificadorEmailCita>();
 
-// ── 2. Servicios de aplicación (no cambian con el Adapter) ───────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// ── 2. Servicios de aplicación ───────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 builder.Services.AddScoped<PacienteService>();
 builder.Services.AddScoped<MedicoService>();
 builder.Services.AddScoped<CitaService>();
 
-// ── 3. MVC ────────────────────────────────────────────────────────────────────
+// ── 3. MVC y Configuración Web ────────────────────────────────────────────────
 builder.Services.AddControllersWithViews();
 
-// ── Configuración de CORS para permitir que tu HTML externo se conecte ──
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirFrontendExterno", policy =>
     {
-        policy.AllowAnyOrigin()   // Permite que cualquier HTML externo se conecte
-              .AllowAnyHeader()   // Permite cualquier tipo de encabezado
-              .AllowAnyMethod();  // Permite GET, POST, PUT, DELETE, etc.
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
-
 
 var app = builder.Build();
 
@@ -63,7 +59,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseCors("PermitirFrontendExterno");//para html de calculadora, es para darle permisos
+app.UseCors("PermitirFrontendExterno");
 app.UseAuthorization();
 
 app.MapControllerRoute(
