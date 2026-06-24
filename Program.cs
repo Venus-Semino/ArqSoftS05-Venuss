@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ── 1. PATRONES DE DISEÑO (GoF) ──────────────────────────────────────────────
-// ─────────────────────────────────────────────────────────────────────────────
 
 var entorno = builder.Environment.EnvironmentName;
 
