@@ -30,25 +30,25 @@ A continuación se presentan las capturas que validan el funcionamiento de los e
 Ejecución de los métodos matemáticos a través del navegador:
 
 **Suma y Resta:**
-![Prueba de Suma](/doc/photos/suma.png)
-![Prueba de Resta](/doc/photos/resta.png)
+![Prueba de Suma](/docS/photos/suma.png)
+![Prueba de Resta](/docs/photos/resta.png)
 
 **Multiplicación y División:**
-![Prueba de Multiplicación](/doc/photos/multiplicación.png)
-![Prueba de División](/doc/photos/división.png)
+![Prueba de Multiplicación](/docs/photos/multiplicación.png)
+![Prueba de División](/docs/photos/división.png)
 
 ### 2. Pruebas de Endpoints API (Pacientes, Médicos, Citas)
 Validación de los verbos GET HTTP retornando los JSON correspondientes:
 
-![API Pacientes](/doc/photos/api_pacientes.png)
-![API Médicos](/doc/photos/api_medicos.png)
-![API Citas](/doc/photos/api_citas.png)
+![API Pacientes](/docs/photos/api_pacientes.png)
+![API Médicos](/docs/photos/api_medicos.png)
+![API Citas](/docs/photos/api_citas.png)
 
 ### 3. Ejecución de Patrones (Factory, Decorator y Observer) - Actividad 26
 Evidencia de la consola de Visual Studio demostrando la inyección de los repositorios y la ejecución asíncrona de los patrones GoF al interactuar con el sistema:
 
-![Consola Actividad 26](/doc/photos/Act26/ACT26_1.png)
-![Ejecución de Patrones](/doc/photos/FactoryDecoratorObserver.png)
+![Consola Actividad 26](/docs/photos/Act26/ACT26_1.png)
+![Ejecución de Patrones](/docs/photos/FactoryDecoratorObserver.png)
 
 ---
 
