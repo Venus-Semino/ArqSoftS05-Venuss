@@ -20,7 +20,7 @@ El flujo respeta la Arquitectura Hexagonal (`Web/API → Application → Domain 
 
 ## Modelado de Datos
 La estructura de nuestras entidades de dominio (Pacientes, Médicos y Citas) y cómo se relacionan entre sí está documentada visualmente.
-**[DIAGRAMA DE CLASES](ClassDiagram.md)**
+**[DIAGRAMA DE CLASES](doc/diagram/ClassDiagramñ.md)**
 
 ## 📸 Evidencias de Ejecución y Pruebas
 
@@ -30,25 +30,25 @@ A continuación se presentan las capturas que validan el funcionamiento de los e
 Ejecución de los métodos matemáticos a través del navegador:
 
 **Suma y Resta:**
-![Prueba de Suma](photos/suma.png)
-![Prueba de Resta](photos/resta.png)
+![Prueba de Suma](doc/photos/suma.png)
+![Prueba de Resta](doc/photos/resta.png)
 
 **Multiplicación y División:**
-![Prueba de Multiplicación](photos/multiplicación.png)
-![Prueba de División](photos/división.png)
+![Prueba de Multiplicación](doc/photos/multiplicación.png)
+![Prueba de División](doc/photos/división.png)
 
 ### 2. Pruebas de Endpoints API (Pacientes, Médicos, Citas)
 Validación de los verbos GET HTTP retornando los JSON correspondientes:
 
-![API Pacientes](photos/api_pacientes.png)
-![API Médicos](photos/api_medicos.png)
-![API Citas](photos/api_citas.png)
+![API Pacientes](doc/photos/api_pacientes.png)
+![API Médicos](doc/photos/api_medicos.png)
+![API Citas](doc/photos/api_citas.png)
 
 ### 3. Ejecución de Patrones (Factory, Decorator y Observer) - Actividad 26
 Evidencia de la consola de Visual Studio demostrando la inyección de los repositorios y la ejecución asíncrona de los patrones GoF al interactuar con el sistema:
 
-![Consola Actividad 26](photos/Act26/ACT26_1.png)
-![Ejecución de Patrones](photos/FactoryDecoratorObserver.png)
+![Consola Actividad 26](doc/photos/Act26/ACT26_1.png)
+![Ejecución de Patrones](doc/photos/FactoryDecoratorObserver.png)
 
 ---
 
