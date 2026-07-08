@@ -20,7 +20,7 @@ El flujo respeta la Arquitectura Hexagonal (`Web/API → Application → Domain 
 
 ## Modelado de Datos
 La estructura de nuestras entidades de dominio (Pacientes, Médicos y Citas) y cómo se relacionan entre sí está documentada visualmente.
-**[DIAGRAMA DE CLASES](doc/diagram/ClassDiagramñ.md)**
+**[DIAGRAMA DE CLASES](![Captura del Proyecto](https://github.com/nombredeusuario/nombrerepositorio/blob/nombrerama/ruta-archivo-imagen?raw=true))**
 
 ## 📸 Evidencias de Ejecución y Pruebas
 
