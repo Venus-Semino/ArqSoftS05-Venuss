@@ -22,7 +22,7 @@ El flujo respeta la Arquitectura Hexagonal (`Web/API → Application → Domain 
 La estructura de nuestras entidades de dominio (Pacientes, Médicos y Citas) y cómo se relacionan entre sí está documentada visualmente.
 **[DIAGRAMA DE CLASES](doc/diagram/ClassDiagramñ.md)**
 
-## 📸 Evidencias de Ejecución y Pruebas
+## Evidencias de Ejecución y Pruebas
 
 A continuación se presentan las capturas que validan el funcionamiento de los endpoints y los patrones requeridos en las actividades.
 
@@ -51,6 +51,10 @@ Evidencia de la consola de Visual Studio demostrando la inyección de los reposi
 ![Ejecución de Patrones](doc/photos/FactoryDecoratorObserver.png)
 
 ---
+## Code Smells y Buenas Prácticas
+En esta rama se han identificado y corregido varios *code smells* y en donde se ha aplicado la refactorización.
+En las code smells detectadas se incluyen:
+1.
 
 ## Tecnologías Utilizadas
 - ASP.NET Core MVC & Web API (.NET 10)
