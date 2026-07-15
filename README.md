@@ -51,10 +51,10 @@ Evidencia de la consola de Visual Studio demostrando la inyección de los reposi
 ![Ejecución de Patrones](doc/photos/FactoryDecoratorObserver.png)
 
 ---
-## Code Smells y Buenas Prácticas
-En esta rama se han identificado y corregido varios *code smells* y en donde se ha aplicado la refactorización.
-En las code smells detectadas se incluyen:
-1.
+## Deuda Técnica
+
+
+---
 
 ## Tecnologías Utilizadas
 - ASP.NET Core MVC & Web API (.NET 10)
