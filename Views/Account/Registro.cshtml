@@ -1,0 +1,85 @@
+﻿@model CitasApp.Web.Models.RegistroViewModel
+@{
+    ViewData["Title"] = "Registro";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CitasApp – Registro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+            body {
+                background-color: #f0f4f8;
+            }
+
+            .login-card {
+                max-width: 420px;
+                margin: 60px auto;
+            }
+
+            .card-header-custom {
+                background-color: #0d6efd;
+                color: white;
+                padding: 1.5rem;
+                border-radius: 8px 8px 0 0;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="card shadow">
+            <div class="card-header-custom">
+                <h4 class="mb-0">🏥 CitasApp</h4>
+                <small>Crear cuenta nueva</small>
+            </div>
+            <div class="card-body p-4">
+                <h5 class="mb-3">Registro</h5>
+
+                <form asp-action="Registro" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2" style="display:@(ViewContext.ModelState.IsValid ? "none" : "block")"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Correo electrónico</label>
+                        <input asp-for="Email" class="form-control" placeholder="usuario@correo.com" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Contraseña</label>
+                        <input asp-for="Password" class="form-control" placeholder="Mínimo 6 caracteres" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Rol" class="form-label">Tipo de usuario</label>
+                        <select asp-for="Rol" class="form-select">
+                            <option value="Paciente">Paciente</option>
+                            <option value="Medico">Médico</option>
+                        </select>
+                        <span asp-validation-for="Rol" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn-primary">Crear cuenta</button>
+                    </div>
+                </form>
+
+                <hr />
+                <p class="text-center text-muted small mb-1">¿Ya tienes cuenta?</p>
+                <div class="d-grid">
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary btn-sm">Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿@using CitasApp.Domain.Models
+@{
+    ViewData["Title"] = "Panel Paciente";
+    var pacientes = ViewBag.Pacientes as List<Paciente>;
+    var medicos = ViewBag.Medicos as List<Medico>;
+    var citas = ViewBag.UltimasCitas as List<Cita>;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="mb-0">Panel del Paciente</h3>
+        <small class="text-muted">Bienvenido, @User.Identity?.Name</small>
+    </div>
+</div>
+
+<!-- Acciones rápidas -->
+<div class="row mb-4">
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm text-center p-3">
+            <div class="display-6 text-primary">📋</div>
+            <div class="text-muted small mt-1">Mis citas</div>
+            <a asp-controller="Cita" asp-action="Index" class="btn btn-sm btn-outline-primary mt-2">Ver citas</a>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm text-center p-3">
+            <div class="display-6 text-success">➕</div>
+            <div class="text-muted small mt-1">Nueva cita</div>
+            <a asp-controller="Cita" asp-action="Crear" class="btn btn-sm btn-outline-success mt-2">Agendar</a>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm text-center p-3">
+            <div class="display-6 text-info">👤</div>
+            <div class="text-muted small mt-1">Registrar paciente</div>
+            <a asp-controller="Paciente" asp-action="Crear" class="btn btn-sm btn-outline-info mt-2">Registrar</a>
+        </div>
+    </div>
+</div>
+
+<!-- Citas recientes -->
+<div class="card shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <span class="fw-semibold">Citas recientes</span>
+        <a asp-controller="Cita" asp-action="Crear" class="btn btn-sm btn-primary">+ Nueva cita</a>
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Paciente</th>
+                    <th>Médico</th>
+                    <th>Motivo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (citas != null && citas.Any())
+                {
+                    @foreach (var c in citas)
+                    {
+                        var paciente = pacientes?.FirstOrDefault(p => p.Id == c.PacienteId);
+                        var medico = medicos?.FirstOrDefault(m => m.Id == c.MedicoId);
+                        <tr>
+                            <td>@c.Fecha.ToString("dd/MM/yyyy")</td>
+                            <td>@c.Hora.ToString("HH:mm")</td>
+                            <td>@(paciente != null ? $"{paciente.Nombre} {paciente.Apellido}" : "—")</td>
+                            <td>@(medico != null ? $"{medico.Nombre} {medico.Apellido}" : "—")</td>
+                            <td>@c.Motivo</td>
+                            <td>
+                                <span class="badge @(c.Estado == "Confirmada" ? "bg-success" : c.Estado == "Cancelada" ? "bg-danger" : "bg-warning text-dark")">
+                                    @c.Estado
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr><td colspan="6" class="text-center text-muted py-3">No hay citas registradas aún</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

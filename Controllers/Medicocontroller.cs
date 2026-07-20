@@ -1,32 +1,46 @@
-﻿using CitasApp.Domain.Interfaces;
+﻿using CitasApp.Application.Services;
+using CitasApp.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitasApp.Web.Controllers
 {
     public class MedicoController : Controller
     {
-        private readonly IMedicoRepository _medicoRepo;
+        private readonly MedicoService _medicoService;
 
-        // Inyectamos la interfaz del repositorio
-        public MedicoController(IMedicoRepository medicoRepo)
+        public MedicoController(MedicoService medicoService)
         {
-            _medicoRepo = medicoRepo;
+            _medicoService = medicoService;
         }
 
         public IActionResult Index()
         {
-            // Usamos el repositorio para obtener los datos del JSON
-            var medicos = _medicoRepo.GetAll();
+            var medicos = _medicoService.GetAll();
             return View(medicos);
         }
 
         public IActionResult Detalle(int id)
         {
-            // Usamos el repositorio para buscar por ID
-            var medico = _medicoRepo.GetById(id);
-            if (medico == null)
+            var medico = _medicoService.GetById(id);
+            if (medico == null) return NotFound();
+            return View(medico);
+        }
+
+        // GET: Medico/Crear
+        [Authorize(Roles = "Medico")]
+        public IActionResult Crear() => View();
+
+        // POST: Medico/Crear
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Medico")]
+        public IActionResult Crear(Medico medico)
+        {
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _medicoService.Add(medico);
+                return RedirectToAction(nameof(Index));
             }
             return View(medico);
         }
