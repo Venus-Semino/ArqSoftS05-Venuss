@@ -56,6 +56,7 @@ Al revisar el proyecto , se identificaron áreas de mejora y deuda técnica que 
 1. Accidental: en citaService se había convertido en una God Class, acumulando demasiada lógica de negocio. Se recomienda dividirlo en servicios más pequeños y especializados. Para futuro se va a dividir para quitar la nececidad de modificarlo direcamente ahí.
 2. De infraestructura: Al querer agregar un paciente, servicio o medico, la persona lo hace manualmente , lo que puede llevar a errores. Se recomienda implementar un sistema de validación y automatización para la creación de entidades.
 
+
 ---
 
 ## Tecnologías Utilizadas
