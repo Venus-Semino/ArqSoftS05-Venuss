@@ -1,0 +1,65 @@
+﻿[
+  {
+    "Id": 1,
+    "PacienteId": 6,
+    "MedicoId": 3,
+    "Fecha": "2026-06-05",
+    "Hora": "08:00",
+    "Motivo": "Chequeo de rutina",
+    "Estado": "Confirmada"
+  },
+  {
+    "Id": 2,
+    "PacienteId": 7,
+    "MedicoId": 8,
+    "Fecha": "2026-06-05",
+    "Hora": "09:30",
+    "Motivo": "Control de diabetes",
+    "Estado": "Confirmada"
+  },
+  {
+    "Id": 3,
+    "PacienteId": 1,
+    "MedicoId": 6,
+    "Fecha": "2026-06-06",
+    "Hora": "16:00",
+    "Motivo": "Terapia de seguimiento",
+    "Estado": "Pendiente"
+  },
+  {
+    "Id": 4,
+    "PacienteId": 8,
+    "MedicoId": 5,
+    "Fecha": "2026-06-07",
+    "Hora": "10:15",
+    "Motivo": "Renovación de graduación de lentes",
+    "Estado": "Confirmada"
+  },
+  {
+    "Id": 5,
+    "PacienteId": 2,
+    "MedicoId": 1,
+    "Fecha": "2026-06-08",
+    "Hora": "11:00",
+    "Motivo": "Revisión de lunares",
+    "Estado": "Cancelada"
+  },
+  {
+    "Id": 6,
+    "PacienteId": 3,
+    "MedicoId": 4,
+    "Fecha": "2026-06-09",
+    "Hora": "12:30",
+    "Motivo": "Dolor articular en rodilla",
+    "Estado": "Confirmada"
+  },
+  {
+    "Id": 7,
+    "PacienteId": 4,
+    "MedicoId": 2,
+    "Fecha": "2026-06-10",
+    "Hora": "14:00",
+    "Motivo": "Tratamiento por migraña crónica",
+    "Estado": "Pendiente"
+  }
+]
