@@ -66,7 +66,7 @@ Al revisar el proyecto , se identificaron áreas de mejora y deuda técnica que 
 - HTML5, CSS3, Bootstrap 5
 
 ---
-## Pruebas
+## Pruebas Unitarias
 
 ``
 ## Cláusura de IA
