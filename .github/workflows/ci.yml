@@ -10,11 +10,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
+          
       - name: Restaurar
-        run: dotnet restore CitaApp.slnx
+        run: dotnet restore CitaApp.csproj
         
       - name: Compilar
-        run: dotnet build CitaApp.slnx --no-restore
+        run: dotnet build CitaApp.csproj --no-restore
         
       - name: Correr pruebas
-        run: dotnet test CitaApp.slnx --no-build
+        run: dotnet test CitaApp.csproj --no-build
