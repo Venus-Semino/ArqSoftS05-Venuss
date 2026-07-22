@@ -67,6 +67,7 @@ Al revisar el proyecto , se identificaron áreas de mejora y deuda técnica que 
 
 ---
 ## Pruebas Unitarias
+Las pruebas unitarias que se están implementando en este proyecto
 
 ``
 ## Cláusura de IA
