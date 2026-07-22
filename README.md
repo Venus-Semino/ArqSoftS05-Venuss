@@ -65,6 +65,9 @@ Al revisar el proyecto , se identificaron áreas de mejora y deuda técnica que 
 - C# (LINQ, Inyección de Dependencias)
 - HTML5, CSS3, Bootstrap 5
 
+---
+## Pruebas
+
 ``
 ## Cláusura de IA
 Este proyecto fue desarrollado con fines académicos para poner en práctica los conceptos de Arquitectura de Software y el patrón de diseño Repositorio en aplicaciones ASP.NET Core MVC.
