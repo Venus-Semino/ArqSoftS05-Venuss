@@ -1,4 +1,5 @@
-﻿using CitasApp.Domain.Interfaces;
+﻿using CitasApp.Application.Services;
+using CitasApp.Domain.Interfaces;
 using CitasApp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,12 +11,22 @@ namespace CitasApp.Web.Controllers
         private readonly ICitaRepository _citaRepo;
         private readonly IPacienteRepository _pacienteRepo;
         private readonly IMedicoRepository _medicoRepo;
+        private CitaService citaService;
+        private PacienteService pacienteService;
+        private MedicoService medicoService;
 
         public CitaController(ICitaRepository citaRepo, IPacienteRepository pacienteRepo, IMedicoRepository medicoRepo)
         {
             _citaRepo = citaRepo;
             _pacienteRepo = pacienteRepo;
             _medicoRepo = medicoRepo;
+        }
+
+        public CitaController(CitaService citaService, PacienteService pacienteService, MedicoService medicoService)
+        {
+            this.citaService = citaService;
+            this.pacienteService = pacienteService;
+            this.medicoService = medicoService;
         }
 
         public IActionResult Index()
