@@ -5,17 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Configurar .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-          
+
       - name: Restaurar
-        run: dotnet restore CitaApp.csproj
-        
+        run: dotnet restore CitaApp.slnx
+
       - name: Compilar
-        run: dotnet build CitaApp.csproj --no-restore
-        
+        run: dotnet build CitaApp.slnx --no-restore --configuration Release
+
       - name: Correr pruebas
-        run: dotnet test CitaApp.csproj --no-build
+        run: dotnet test CitaApp.xUnit/CitasApp.xUnit.csproj --no-build --configuration Release
