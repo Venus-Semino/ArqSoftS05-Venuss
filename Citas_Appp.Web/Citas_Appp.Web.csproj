@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Citas_App.Infrastructure\Citas_App.Infrastructure.csproj" />
-    <ProjectReference Include="..\Citas_App.Api\Citas_App.Api.csproj" />
-    <ProjectReference Include="..\Citas_App.Application\Citas_App.Application.csproj" />
-    <ProjectReference Include="..\Citas_App.Domain\Citas_App.Domain.csproj" />
-    <ProjectReference Include="..\Infrastructura\Citas_App.Infrastructure.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Citas_App.Infrastructure\Citas_App.Infrastructure.csproj" />
+		<ProjectReference Include="..\Citas_App.Api\Citas_App.Api.csproj" />
+		<ProjectReference Include="..\Citas_App.Application\Citas_App.Application.csproj" />
+		<ProjectReference Include="..\Citas_App.Domain\Citas_App.Domain.csproj" />
+		<ProjectReference Include="..\Infrastructura\Citas_App.Infrastructure.csproj" />
+	</ItemGroup>
 
 </Project>
