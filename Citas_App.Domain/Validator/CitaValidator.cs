@@ -1,6 +1,6 @@
-namespace CitasApp.Domain.Validators;
+namespace Citas_App.Domain.Validators;
 
-using CitasApp.Domain.Models;
+using Citas_App.Domain.Models;
 
 public class CitaValidator
 {

@@ -1,6 +1,6 @@
-namespace CitasApp.Domain.Factories;
+namespace Citas_App.Domain.Factories;
 
-using CitasApp.Domain.Models;
+using Citas_App.Domain.Models;
 
 public class CitaFactory
 {

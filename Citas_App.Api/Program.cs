@@ -1,6 +1,6 @@
-using CitasApp.Application.Services;
-using CitasApp.Domain.Interfaces;
-using CitasApp.Infrastructure.Repositories;
+using Citas_App.Application.Services;
+using Citas_App.Domain.Interfaces;
+using Citas_App.Infrastructure.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {

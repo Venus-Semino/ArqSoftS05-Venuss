@@ -1,7 +1,7 @@
-using CitasApp.Application.DTOs;
-using CitasApp.Domain.Models;
+using Citas_App.Application.DTOs;
+using Citas_App.Domain.Models;
 
-namespace CitasApp.Application.Interfaces;
+namespace Citas_App.Application.Interfaces;
 
 public interface ICitaService
 {

@@ -1,6 +1,6 @@
-using CitasApp.Application.Services;
+using Citas_App.Application.Services;
 using Microsoft.AspNetCore.Mvc;
-namespace CitasApp.Api.Controllers
+namespace Citas_App.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

@@ -1,4 +1,4 @@
-namespace CitasApp.Application.DTOs;
+namespace Citas_App.Application.DTOs;
 
 public class CitaViewModel
 {

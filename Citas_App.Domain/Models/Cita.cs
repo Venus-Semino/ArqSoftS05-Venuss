@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CitasApp.Domain.Models;
+namespace Citas_App.Domain.Models;
 
 public class Cita
 {
