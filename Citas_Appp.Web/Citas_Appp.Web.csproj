@@ -11,7 +11,7 @@
     <ProjectReference Include="..\Citas_App.Api\Citas_App.Api.csproj" />
     <ProjectReference Include="..\Citas_App.Application\Citas_App.Application.csproj" />
     <ProjectReference Include="..\Citas_App.Domain\Citas_App.Domain.csproj" />
-    <ProjectReference Include="..\Infrastructura\Citas_App.Infrastructura.csproj" />
+    <ProjectReference Include="..\Infrastructura\Citas_App.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
