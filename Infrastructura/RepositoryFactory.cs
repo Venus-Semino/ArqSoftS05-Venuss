@@ -1,4 +1,5 @@
 ﻿using Citas_App.Domain.Interfaces;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Citas_App.Infrastructure.Repositories;
 

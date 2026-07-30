@@ -11,9 +11,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- Necesario para que IWebHostEnvironment (usado en JsonCitaRepository, JsonMedicoRepository,
+		     JsonPacienteRepository y RepositoryFactory) esté disponible. Un class library normal
+		     (Microsoft.NET.Sdk) no incluye el framework de ASP.NET Core por defecto. -->
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\Citas_App.Application\Citas_App.Application.csproj" />
 		<ProjectReference Include="..\Citas_App.Domain\Citas_App.Domain.csproj" />
 	</ItemGroup>
-	
+
 
 </Project>
