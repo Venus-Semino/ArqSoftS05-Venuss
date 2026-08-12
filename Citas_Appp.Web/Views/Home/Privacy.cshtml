@@ -1,6 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacidad";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<section class="page-hero js-reveal">
+    <div class="container">
+        <span class="hero__badge">Legal</span>
+        <h1>@ViewData["Title"]</h1>
+        <p>Cómo tratamos la información de pacientes y médicos dentro de CitaApp.</p>
+    </div>
+</section>
+
+<section class="policy">
+    <div class="container">
+        <div class="policy__card js-reveal">
+            <h2>Uso de la información</h2>
+            <p>
+                Los datos registrados de pacientes y médicos se utilizan únicamente para agendar,
+                consultar y dar seguimiento a las citas dentro de este sistema.
+            </p>
+        </div>
+        <div class="policy__card js-reveal">
+            <h2>Almacenamiento</h2>
+            <p>
+                La información se guarda en los repositorios configurados del sistema (archivos
+                locales o base de datos, según el entorno) y no se comparte con terceros.
+            </p>
+        </div>
+        <div class="policy__card js-reveal">
+            <h2>Actualiza esta política</h2>
+            <p>
+                Esta sección es un punto de partida: reemplázala con la política de privacidad
+                real de tu consultorio o clínica antes de usar la app en producción.
+            </p>
+        </div>
+    </div>
+</section>

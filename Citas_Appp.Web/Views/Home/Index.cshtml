@@ -1,8 +1,111 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero" id="inicio">
+    <div class="container hero__inner">
+        <div class="hero__text">
+            <span class="hero__badge js-anim" data-anim="badge">Gestión de citas médicas</span>
+            <h1 class="hero__title js-anim" data-anim="title">
+                Organiza tu consultorio<br /> sin complicaciones
+            </h1>
+            <p class="hero__subtitle js-anim" data-anim="subtitle">
+                CitaApp centraliza pacientes, médicos y citas en un solo lugar, para que tu equipo
+                dedique menos tiempo a la agenda y más tiempo a las personas.
+            </p>
+            <div class="hero__actions js-anim" data-anim="actions">
+                <a href="#como-funciona" class="btn app-btn app-btn--primary">Cómo funciona</a>
+                <a asp-controller="Home" asp-action="Privacy" class="btn app-btn app-btn--ghost">Ver privacidad</a>
+            </div>
+        </div>
+        <div class="hero__art js-anim" data-anim="art" aria-hidden="true">
+            <div class="hero__card hero__card--1">
+                <span class="hero__dot"></span>
+                <p class="hero__card-title">Cita confirmada</p>
+                <p class="hero__card-text">Dra. Herrera · 10:30 a.m.</p>
+            </div>
+            <div class="hero__card hero__card--2">
+                <span class="hero__dot hero__dot--accent"></span>
+                <p class="hero__card-title">Nuevo paciente</p>
+                <p class="hero__card-text">Registro completado</p>
+            </div>
+            <div class="hero__blob"></div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="como-funciona">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Todo lo que necesitas, en tres piezas</h2>
+            <p>La app organiza la información en torno a tres entidades simples de manejar.</p>
+        </div>
+        <div class="features__grid">
+            <article class="feature-card js-reveal">
+                <div class="feature-card__icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M4.5 20c1.2-3.6 4.2-5.5 7.5-5.5s6.3 1.9 7.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3>Pacientes</h3>
+                <p>Guarda los datos de contacto y el historial básico de cada paciente registrado.</p>
+            </article>
+            <article class="feature-card js-reveal">
+                <div class="feature-card__icon feature-card__icon--accent">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 3h6l1 4H8l1-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                        <path d="M6 7h12l-1 13a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                        <path d="M12 11v5M9.5 13.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3>Médicos</h3>
+                <p>Consulta el catálogo de médicos con su especialidad y número de licencia.</p>
+            </article>
+            <article class="feature-card js-reveal">
+                <div class="feature-card__icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3.5" y="4.5" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        <path d="M8 14l2.3 2.3L16 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h3>Citas</h3>
+                <p>Cada cita queda asociada a un paciente y un médico, con fecha, motivo y estado.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="steps">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Así fluye una cita</h2>
+            <p>Un proceso corto de tres pasos, pensado para no perder tiempo entre pantallas.</p>
+        </div>
+        <ol class="steps__list">
+            <li class="steps__item js-reveal">
+                <span class="steps__number">1</span>
+                <div>
+                    <h3>Registra al paciente</h3>
+                    <p>Nombre, apellido, correo y teléfono de contacto.</p>
+                </div>
+            </li>
+            <li class="steps__item js-reveal">
+                <span class="steps__number">2</span>
+                <div>
+                    <h3>Elige un médico</h3>
+                    <p>Filtra por especialidad y disponibilidad.</p>
+                </div>
+            </li>
+            <li class="steps__item js-reveal">
+                <span class="steps__number">3</span>
+                <div>
+                    <h3>Confirma la cita</h3>
+                    <p>Define fecha, hora y motivo. Listo.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
